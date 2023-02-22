@@ -1,18 +1,19 @@
 {
   "name": "url-shortener",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a link shortener",
+  "main": "dist/source/main/index.js",
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev source/main/server.ts",
+    "build": "tsc --build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Victor101106",
   "license": "MIT",
   "devDependencies": {
     "@types/express": "^4.17.17",
