@@ -3,15 +3,15 @@ import { Request, Response, Router } from "express";
 
 export default (router: Router) => {
     
-    router.post('/s', (request: Request, response: Response) => {
+    router.post('/', (request: Request, response: Response) => {
         return createShortenerController.handle(request, response)
     })
 
-    router.get('/s/:id', (request: Request, response: Response) => {
+    router.get('/:id', (request: Request, response: Response) => {
         return getShortenerController.handle(request, response)
     })
 
-    router.delete('/s/:id', (request: Request, response: Response) => {
+    router.delete('/:id', (request: Request, response: Response) => {
         return deleteShortenerController.handle(request, response)
     })
 
