@@ -18,7 +18,7 @@ export class Id {
     }
 
     static validateId(id: string): boolean {
-        return id.trim.length >= 2
+        return id.trim().length >= 2
     }
 
 }
