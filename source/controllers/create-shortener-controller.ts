@@ -16,7 +16,9 @@ export class CreateShortenerController {
         const shortenerOrError = this.createShortenerUseCase.execute(id, url)
 
         if (shortenerOrError.isLeft()) 
-            return response.status(400).json(shortenerOrError.value)
+            return response.status(400).json({
+                message: shortenerOrError.value.message,
+            })
         
         const shortener = shortenerOrError.value
 
