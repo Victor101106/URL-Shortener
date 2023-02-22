@@ -15,6 +15,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "commitizen": "^4.3.0"
+    "commitizen": "^4.3.0",
+    "typescript": "^4.9.5"
   }
 }
