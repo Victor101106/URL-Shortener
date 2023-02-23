@@ -11,20 +11,21 @@ export class CreateShortenerController {
 
     handle(request: Request, response: Response): Response | void {
 
-        const { id, url } = request.body 
+        const { url } = request.body
 
-        const shortenerOrError = this.createShortenerUseCase.execute(id, url)
+        const shortenerOrError = this.createShortenerUseCase.execute(url)
 
         if (shortenerOrError.isLeft()) 
             return response.status(400).json({
                 message: shortenerOrError.value.message,
             })
         
+        const baseURL = request.protocol + '://' + request.get('host') + request.originalUrl
         const shortener = shortenerOrError.value
 
         return response.status(200).json({
             id: shortener.id.value,
-            url: shortener.url.value
+            url: baseURL + shortener.id.value + '/'
         })
 
     }
